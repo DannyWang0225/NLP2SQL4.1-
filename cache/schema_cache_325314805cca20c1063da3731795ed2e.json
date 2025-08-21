@@ -1,0 +1,1178 @@
+{
+  "timestamp": "2025-08-19T11:48:09.561420",
+  "database_config": {
+    "database_type": "sqlite",
+    "database_path": "enterprise_database.db",
+    "host": "106.12.15.19",
+    "port": 14334,
+    "user": "readonlyuser",
+    "password": "Password123",
+    "database": "JM6DAPCS"
+  },
+  "tables": {
+    "Cart_Items": {
+      "create_sql": "CREATE TABLE `Cart_Items` (\n  `cart_item_id` INTEGER,\n  `cart_id` INTEGER,\n  `product_id` INTEGER,\n  `quantity` INTEGER,\n  `added_at` DATETIME\n);",
+      "columns": [
+        {
+          "name": "cart_item_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "cart_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "quantity",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "added_at",
+          "type": "DATETIME",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Customer_Addresses": {
+      "create_sql": "CREATE TABLE `Customer_Addresses` (\n  `address_id` INTEGER,\n  `customer_id` INTEGER,\n  `address_line1` TEXT,\n  `city` TEXT,\n  `postal_code` TEXT,\n  `is_default` BOOLEAN\n);",
+      "columns": [
+        {
+          "name": "address_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "address_line1",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "city",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "postal_code",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "is_default",
+          "type": "BOOLEAN",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 6
+    },
+    "Customers": {
+      "create_sql": "CREATE TABLE `Customers` (\n  `customer_id` INTEGER,\n  `customer_name` TEXT,\n  `email` TEXT,\n  `registration_date` DATE\n);",
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "customer_name",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "registration_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 4
+    },
+    "Departments": {
+      "create_sql": "CREATE TABLE `Departments` (\n  `department_id` INTEGER,\n  `department_name` TEXT,\n  `location` TEXT\n);",
+      "columns": [
+        {
+          "name": "department_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "department_name",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "location",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 3
+    },
+    "Employee_Attendance": {
+      "create_sql": "CREATE TABLE `Employee_Attendance` (\n  `attendance_id` INTEGER,\n  `employee_id` INTEGER,\n  `check_in_time` DATETIME,\n  `check_out_time` DATETIME,\n  `work_date` DATE\n);",
+      "columns": [
+        {
+          "name": "attendance_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "employee_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "check_in_time",
+          "type": "DATETIME",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "check_out_time",
+          "type": "DATETIME",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "work_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Employees": {
+      "create_sql": "CREATE TABLE `Employees` (\n  `employee_id` INTEGER,\n  `first_name` TEXT,\n  `last_name` TEXT,\n  `email` TEXT,\n  `phone_number` TEXT,\n  `hire_date` DATE,\n  `job_title` TEXT,\n  `salary` REAL,\n  `department_id` INTEGER\n);",
+      "columns": [
+        {
+          "name": "employee_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "first_name",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "last_name",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "phone_number",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "hire_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "job_title",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "salary",
+          "type": "REAL",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "department_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 9
+    },
+    "Inventory": {
+      "create_sql": "CREATE TABLE `Inventory` (\n  `inventory_id` INTEGER,\n  `product_id` INTEGER,\n  `quantity_on_hand` INTEGER,\n  `last_stock_update` DATETIME\n);",
+      "columns": [
+        {
+          "name": "inventory_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "quantity_on_hand",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "last_stock_update",
+          "type": "DATETIME",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 4
+    },
+    "Invoices": {
+      "create_sql": "CREATE TABLE `Invoices` (\n  `invoice_id` INTEGER,\n  `order_id` INTEGER,\n  `invoice_date` DATE,\n  `due_date` DATE,\n  `amount` REAL,\n  `is_paid` BOOLEAN\n);",
+      "columns": [
+        {
+          "name": "invoice_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "invoice_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "due_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "is_paid",
+          "type": "BOOLEAN",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 6
+    },
+    "Order_Items": {
+      "create_sql": "CREATE TABLE `Order_Items` (\n  `order_item_id` INTEGER,\n  `order_id` INTEGER,\n  `product_id` INTEGER,\n  `quantity` INTEGER,\n  `unit_price` REAL\n);",
+      "columns": [
+        {
+          "name": "order_item_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "quantity",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "unit_price",
+          "type": "REAL",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Orders": {
+      "create_sql": "CREATE TABLE `Orders` (\n  `order_id` INTEGER,\n  `customer_id` INTEGER,\n  `order_date` DATE,\n  `total_amount` REAL,\n  `status` TEXT,\n  `promotion_id` INTEGER\n);",
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "order_date",
+          "type": "DATE",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "total_amount",
+          "type": "REAL",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "promotion_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 6
+    },
+    "Payments": {
+      "create_sql": "CREATE TABLE `Payments` (\n  `payment_id` INTEGER,\n  `invoice_id` INTEGER,\n  `payment_date` DATE,\n  `amount` REAL,\n  `payment_method` TEXT\n);",
+      "columns": [
+        {
+          "name": "payment_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "invoice_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "payment_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "payment_method",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Product_Categories": {
+      "create_sql": "CREATE TABLE `Product_Categories` (\n  `category_id` INTEGER,\n  `category_name` TEXT,\n  `description` TEXT\n);",
+      "columns": [
+        {
+          "name": "category_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "category_name",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 3
+    },
+    "Product_Reviews": {
+      "create_sql": "CREATE TABLE `Product_Reviews` (\n  `review_id` INTEGER,\n  `product_id` INTEGER,\n  `customer_id` INTEGER,\n  `rating` INTEGER,\n  `comment` TEXT,\n  `review_date` DATE\n);",
+      "columns": [
+        {
+          "name": "review_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "rating",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "comment",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "review_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 6
+    },
+    "Products": {
+      "create_sql": "CREATE TABLE `Products` (\n  `product_id` INTEGER,\n  `product_name` TEXT,\n  `description` TEXT,\n  `price` REAL,\n  `category_id` INTEGER,\n  `supplier_id` INTEGER\n);",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "product_name",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "price",
+          "type": "REAL",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "category_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "supplier_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 6
+    },
+    "Promotions": {
+      "create_sql": "CREATE TABLE `Promotions` (\n  `promotion_id` INTEGER,\n  `promotion_name` TEXT,\n  `discount_rate` REAL,\n  `start_date` DATE,\n  `end_date` DATE\n);",
+      "columns": [
+        {
+          "name": "promotion_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "promotion_name",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "discount_rate",
+          "type": "REAL",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "start_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "end_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Returns": {
+      "create_sql": "CREATE TABLE `Returns` (\n  `return_id` INTEGER,\n  `order_item_id` INTEGER,\n  `reason` TEXT,\n  `return_date` DATE,\n  `status` TEXT\n);",
+      "columns": [
+        {
+          "name": "return_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "order_item_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "reason",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "return_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Shipments": {
+      "create_sql": "CREATE TABLE `Shipments` (\n  `shipment_id` INTEGER,\n  `order_id` INTEGER,\n  `shipment_date` DATE,\n  `tracking_number` TEXT,\n  `carrier` TEXT\n);",
+      "columns": [
+        {
+          "name": "shipment_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "shipment_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "tracking_number",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "carrier",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    },
+    "Shopping_Carts": {
+      "create_sql": "CREATE TABLE `Shopping_Carts` (\n  `cart_id` INTEGER,\n  `customer_id` INTEGER,\n  `created_at` DATETIME\n);",
+      "columns": [
+        {
+          "name": "cart_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 3
+    },
+    "Suppliers": {
+      "create_sql": "CREATE TABLE `Suppliers` (\n  `supplier_id` INTEGER,\n  `supplier_name` TEXT,\n  `contact_person` TEXT,\n  `phone` TEXT\n);",
+      "columns": [
+        {
+          "name": "supplier_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "supplier_name",
+          "type": "TEXT",
+          "nullable": false,
+          "default": null
+        },
+        {
+          "name": "contact_person",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "phone",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 4
+    },
+    "System_Logs": {
+      "create_sql": "CREATE TABLE `System_Logs` (\n  `log_id` INTEGER,\n  `employee_id` INTEGER,\n  `timestamp` DATETIME,\n  `action` TEXT,\n  `details` TEXT\n);",
+      "columns": [
+        {
+          "name": "log_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "employee_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "action",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        },
+        {
+          "name": "details",
+          "type": "TEXT",
+          "nullable": true,
+          "default": null
+        }
+      ],
+      "column_count": 5
+    }
+  },
+  "relationships": [
+    {
+      "from_table": "Cart_Items",
+      "from_columns": [
+        "cart_id"
+      ],
+      "to_table": "Shopping_Carts",
+      "to_columns": [
+        "cart_id"
+      ],
+      "description": "`Cart_Items`.`cart_id` can be joined with `Shopping_Carts`.`cart_id`"
+    },
+    {
+      "from_table": "Cart_Items",
+      "from_columns": [
+        "product_id"
+      ],
+      "to_table": "Products",
+      "to_columns": [
+        "product_id"
+      ],
+      "description": "`Cart_Items`.`product_id` can be joined with `Products`.`product_id`"
+    },
+    {
+      "from_table": "Customer_Addresses",
+      "from_columns": [
+        "customer_id"
+      ],
+      "to_table": "Customers",
+      "to_columns": [
+        "customer_id"
+      ],
+      "description": "`Customer_Addresses`.`customer_id` can be joined with `Customers`.`customer_id`"
+    },
+    {
+      "from_table": "Employee_Attendance",
+      "from_columns": [
+        "employee_id"
+      ],
+      "to_table": "Employees",
+      "to_columns": [
+        "employee_id"
+      ],
+      "description": "`Employee_Attendance`.`employee_id` can be joined with `Employees`.`employee_id`"
+    },
+    {
+      "from_table": "Employees",
+      "from_columns": [
+        "department_id"
+      ],
+      "to_table": "Departments",
+      "to_columns": [
+        "department_id"
+      ],
+      "description": "`Employees`.`department_id` can be joined with `Departments`.`department_id`"
+    },
+    {
+      "from_table": "Inventory",
+      "from_columns": [
+        "product_id"
+      ],
+      "to_table": "Products",
+      "to_columns": [
+        "product_id"
+      ],
+      "description": "`Inventory`.`product_id` can be joined with `Products`.`product_id`"
+    },
+    {
+      "from_table": "Invoices",
+      "from_columns": [
+        "order_id"
+      ],
+      "to_table": "Orders",
+      "to_columns": [
+        "order_id"
+      ],
+      "description": "`Invoices`.`order_id` can be joined with `Orders`.`order_id`"
+    },
+    {
+      "from_table": "Order_Items",
+      "from_columns": [
+        "order_id"
+      ],
+      "to_table": "Orders",
+      "to_columns": [
+        "order_id"
+      ],
+      "description": "`Order_Items`.`order_id` can be joined with `Orders`.`order_id`"
+    },
+    {
+      "from_table": "Order_Items",
+      "from_columns": [
+        "product_id"
+      ],
+      "to_table": "Products",
+      "to_columns": [
+        "product_id"
+      ],
+      "description": "`Order_Items`.`product_id` can be joined with `Products`.`product_id`"
+    },
+    {
+      "from_table": "Orders",
+      "from_columns": [
+        "customer_id"
+      ],
+      "to_table": "Customers",
+      "to_columns": [
+        "customer_id"
+      ],
+      "description": "`Orders`.`customer_id` can be joined with `Customers`.`customer_id`"
+    },
+    {
+      "from_table": "Orders",
+      "from_columns": [
+        "promotion_id"
+      ],
+      "to_table": "Promotions",
+      "to_columns": [
+        "promotion_id"
+      ],
+      "description": "`Orders`.`promotion_id` can be joined with `Promotions`.`promotion_id`"
+    },
+    {
+      "from_table": "Payments",
+      "from_columns": [
+        "invoice_id"
+      ],
+      "to_table": "Invoices",
+      "to_columns": [
+        "invoice_id"
+      ],
+      "description": "`Payments`.`invoice_id` can be joined with `Invoices`.`invoice_id`"
+    },
+    {
+      "from_table": "Product_Reviews",
+      "from_columns": [
+        "product_id"
+      ],
+      "to_table": "Products",
+      "to_columns": [
+        "product_id"
+      ],
+      "description": "`Product_Reviews`.`product_id` can be joined with `Products`.`product_id`"
+    },
+    {
+      "from_table": "Product_Reviews",
+      "from_columns": [
+        "customer_id"
+      ],
+      "to_table": "Customers",
+      "to_columns": [
+        "customer_id"
+      ],
+      "description": "`Product_Reviews`.`customer_id` can be joined with `Customers`.`customer_id`"
+    },
+    {
+      "from_table": "Products",
+      "from_columns": [
+        "category_id"
+      ],
+      "to_table": "Product_Categories",
+      "to_columns": [
+        "category_id"
+      ],
+      "description": "`Products`.`category_id` can be joined with `Product_Categories`.`category_id`"
+    },
+    {
+      "from_table": "Products",
+      "from_columns": [
+        "supplier_id"
+      ],
+      "to_table": "Suppliers",
+      "to_columns": [
+        "supplier_id"
+      ],
+      "description": "`Products`.`supplier_id` can be joined with `Suppliers`.`supplier_id`"
+    },
+    {
+      "from_table": "Returns",
+      "from_columns": [
+        "order_item_id"
+      ],
+      "to_table": "Order_Items",
+      "to_columns": [
+        "order_item_id"
+      ],
+      "description": "`Returns`.`order_item_id` can be joined with `Order_Items`.`order_item_id`"
+    },
+    {
+      "from_table": "Shipments",
+      "from_columns": [
+        "order_id"
+      ],
+      "to_table": "Orders",
+      "to_columns": [
+        "order_id"
+      ],
+      "description": "`Shipments`.`order_id` can be joined with `Orders`.`order_id`"
+    },
+    {
+      "from_table": "Shopping_Carts",
+      "from_columns": [
+        "customer_id"
+      ],
+      "to_table": "Customers",
+      "to_columns": [
+        "customer_id"
+      ],
+      "description": "`Shopping_Carts`.`customer_id` can be joined with `Customers`.`customer_id`"
+    },
+    {
+      "from_table": "System_Logs",
+      "from_columns": [
+        "employee_id"
+      ],
+      "to_table": "Employees",
+      "to_columns": [
+        "employee_id"
+      ],
+      "description": "`System_Logs`.`employee_id` can be joined with `Employees`.`employee_id`"
+    }
+  ],
+  "table_summary": {
+    "Cart_Items": {
+      "column_names": [
+        "cart_item_id",
+        "cart_id",
+        "product_id",
+        "quantity",
+        "added_at"
+      ],
+      "column_count": 5,
+      "description": "Table Cart_Items has 5 columns: cart_item_id, cart_id, product_id, quantity, added_at"
+    },
+    "Customer_Addresses": {
+      "column_names": [
+        "address_id",
+        "customer_id",
+        "address_line1",
+        "city",
+        "postal_code",
+        "is_default"
+      ],
+      "column_count": 6,
+      "description": "Table Customer_Addresses has 6 columns: address_id, customer_id, address_line1, city, postal_code..."
+    },
+    "Customers": {
+      "column_names": [
+        "customer_id",
+        "customer_name",
+        "email",
+        "registration_date"
+      ],
+      "column_count": 4,
+      "description": "Table Customers has 4 columns: customer_id, customer_name, email, registration_date"
+    },
+    "Departments": {
+      "column_names": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "column_count": 3,
+      "description": "Table Departments has 3 columns: department_id, department_name, location"
+    },
+    "Employee_Attendance": {
+      "column_names": [
+        "attendance_id",
+        "employee_id",
+        "check_in_time",
+        "check_out_time",
+        "work_date"
+      ],
+      "column_count": 5,
+      "description": "Table Employee_Attendance has 5 columns: attendance_id, employee_id, check_in_time, check_out_time, work_date"
+    },
+    "Employees": {
+      "column_names": [
+        "employee_id",
+        "first_name",
+        "last_name",
+        "email",
+        "phone_number",
+        "hire_date",
+        "job_title",
+        "salary",
+        "department_id"
+      ],
+      "column_count": 9,
+      "description": "Table Employees has 9 columns: employee_id, first_name, last_name, email, phone_number..."
+    },
+    "Inventory": {
+      "column_names": [
+        "inventory_id",
+        "product_id",
+        "quantity_on_hand",
+        "last_stock_update"
+      ],
+      "column_count": 4,
+      "description": "Table Inventory has 4 columns: inventory_id, product_id, quantity_on_hand, last_stock_update"
+    },
+    "Invoices": {
+      "column_names": [
+        "invoice_id",
+        "order_id",
+        "invoice_date",
+        "due_date",
+        "amount",
+        "is_paid"
+      ],
+      "column_count": 6,
+      "description": "Table Invoices has 6 columns: invoice_id, order_id, invoice_date, due_date, amount..."
+    },
+    "Order_Items": {
+      "column_names": [
+        "order_item_id",
+        "order_id",
+        "product_id",
+        "quantity",
+        "unit_price"
+      ],
+      "column_count": 5,
+      "description": "Table Order_Items has 5 columns: order_item_id, order_id, product_id, quantity, unit_price"
+    },
+    "Orders": {
+      "column_names": [
+        "order_id",
+        "customer_id",
+        "order_date",
+        "total_amount",
+        "status",
+        "promotion_id"
+      ],
+      "column_count": 6,
+      "description": "Table Orders has 6 columns: order_id, customer_id, order_date, total_amount, status..."
+    },
+    "Payments": {
+      "column_names": [
+        "payment_id",
+        "invoice_id",
+        "payment_date",
+        "amount",
+        "payment_method"
+      ],
+      "column_count": 5,
+      "description": "Table Payments has 5 columns: payment_id, invoice_id, payment_date, amount, payment_method"
+    },
+    "Product_Categories": {
+      "column_names": [
+        "category_id",
+        "category_name",
+        "description"
+      ],
+      "column_count": 3,
+      "description": "Table Product_Categories has 3 columns: category_id, category_name, description"
+    },
+    "Product_Reviews": {
+      "column_names": [
+        "review_id",
+        "product_id",
+        "customer_id",
+        "rating",
+        "comment",
+        "review_date"
+      ],
+      "column_count": 6,
+      "description": "Table Product_Reviews has 6 columns: review_id, product_id, customer_id, rating, comment..."
+    },
+    "Products": {
+      "column_names": [
+        "product_id",
+        "product_name",
+        "description",
+        "price",
+        "category_id",
+        "supplier_id"
+      ],
+      "column_count": 6,
+      "description": "Table Products has 6 columns: product_id, product_name, description, price, category_id..."
+    },
+    "Promotions": {
+      "column_names": [
+        "promotion_id",
+        "promotion_name",
+        "discount_rate",
+        "start_date",
+        "end_date"
+      ],
+      "column_count": 5,
+      "description": "Table Promotions has 5 columns: promotion_id, promotion_name, discount_rate, start_date, end_date"
+    },
+    "Returns": {
+      "column_names": [
+        "return_id",
+        "order_item_id",
+        "reason",
+        "return_date",
+        "status"
+      ],
+      "column_count": 5,
+      "description": "Table Returns has 5 columns: return_id, order_item_id, reason, return_date, status"
+    },
+    "Shipments": {
+      "column_names": [
+        "shipment_id",
+        "order_id",
+        "shipment_date",
+        "tracking_number",
+        "carrier"
+      ],
+      "column_count": 5,
+      "description": "Table Shipments has 5 columns: shipment_id, order_id, shipment_date, tracking_number, carrier"
+    },
+    "Shopping_Carts": {
+      "column_names": [
+        "cart_id",
+        "customer_id",
+        "created_at"
+      ],
+      "column_count": 3,
+      "description": "Table Shopping_Carts has 3 columns: cart_id, customer_id, created_at"
+    },
+    "Suppliers": {
+      "column_names": [
+        "supplier_id",
+        "supplier_name",
+        "contact_person",
+        "phone"
+      ],
+      "column_count": 4,
+      "description": "Table Suppliers has 4 columns: supplier_id, supplier_name, contact_person, phone"
+    },
+    "System_Logs": {
+      "column_names": [
+        "log_id",
+        "employee_id",
+        "timestamp",
+        "action",
+        "details"
+      ],
+      "column_count": 5,
+      "description": "Table System_Logs has 5 columns: log_id, employee_id, timestamp, action, details"
+    }
+  }
+}
