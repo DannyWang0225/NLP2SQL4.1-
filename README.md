@@ -1,7 +1,7 @@
 # NLP-to-SQL Intelligent Query System
 
 This project is an intelligent query system that translates natural language questions into SQL queries, executes them, and returns the results. It now uses the Gemini API for its natural language processing capabilities.
-![alt text](719620d480f82f94bb3da8c926575987.jpg)
+![alt text](展示图.jpg)
 ## Requirements
 - Python 3.8+
 - Streamlit
